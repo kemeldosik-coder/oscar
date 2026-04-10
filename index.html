@@ -3,374 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EAGI OSCAR 2026 | Премия года</title>
-    
-    <!-- Premium Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --gold: #d4af37;
-            --dark-gold: #aa8928;
-            --black: #000000;
-            --dark-grey: #121212;
-            --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            background-color: var(--black);
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            /* ЗДЕСЬ МЕСТО ДЛЯ ВАШЕГО URL ФОТО */
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                        url('data:image/jpeg;base64,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')
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .hero-content { padding: 0 20px; z-index: 5; }
-
-        .hero-content h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
-            letter-spacing: 8px;
-            margin-bottom: 10px;
-            background: linear-gradient(to bottom, #fff, var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-
-        /* TIMER AREA */
-        .timer-container {
-            display: flex;
-            justify-content: center;
-            gap: clamp(15px, 5vw, 40px);
-            margin-bottom: 50px;
-        }
-
-        .timer-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .timer-val {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 6vw, 4rem);
-            color: var(--gold);
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .timer-label {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: rgba(255,255,255,0.6);
-            margin-top: 10px;
-        }
-
-        /* BUTTONS */
-        .cta-btn {
-            padding: 18px 45px;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--black);
-            background: linear-gradient(45deg, var(--gold), #fcf6ba);
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
-        }
-
-        /* NOMINATIONS SECTION */
-        .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
-        
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 60px;
-            color: var(--gold);
-        }
-
-        .nom-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .nom-card {
-            background: var(--dark-grey);
-            padding: 40px;
-            text-align: center;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: 0.3s;
-        }
-
-        .nom-card:hover {
-            border-color: var(--gold);
-            background: rgba(212, 175, 55, 0.05);
-            transform: translateY(-5px);
-        }
-
-        /* FORM SECTION */
-        .form-container {
-            background: #080808;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: clamp(20px, 6vw, 60px);
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .input-group { margin-bottom: 30px; }
-        
-        label {
-            display: block;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            color: var(--gold);
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 15px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: white;
-            font-family: inherit;
-            font-size: 15px;
-            border-radius: 0;
-            transition: 0.3s;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-            background: rgba(255,255,255,0.06);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            font-size: 12px;
-            letter-spacing: 3px;
-            opacity: 0.5;
-        }
-
-        @media (max-width: 768px) {
-            .form-row { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 2.8rem; }
-        }
-    </style>
+    <title>EAGI Oscar | Студенческая премия</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Main Hero -->
-    <header class="hero">
-        <div class="hero-content">
-            <p>ЕАГИ представляет</p>
-            <h1>OSCAR 2026</h1>
-            <p>13 Мая | Астана</p>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">EAGI <span>OSCAR</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">О премии</a></li>
+                <li><a href="#nominations">Номинации</a></li>
+                <li><a href="#voting">Голосование</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-            <div class="timer-container">
-                <div class="timer-item"><span class="timer-val" id="d">00</span><span class="timer-label">дней</span></div>
-                <div class="timer-item"><span class="timer-val" id="h">00</span><span class="timer-label">часов</span></div>
-                <div class="timer-item"><span class="timer-val" id="m">00</span><span class="timer-label">минут</span></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2 class="reveal">Премия признания лучших студентов EAGI</h2>
+            <h1 class="reveal delay-1">EAGI OSCAR</h1>
+            <p class="reveal delay-2">Главная студенческая премия года. Стань частью истории успеха.</p>
+            <div class="hero-btns reveal delay-3">
+                <a href="#nominations" class="btn btn-outline">Смотреть номинации</a>
+                <a href="#voting" class="btn btn-gold">Голосовать</a>
+            </div>
+        </div>
+        <div class="scroll-down"></div>
+    </section>
+
+    <!-- О премии -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="title">О премии</h2>
+                <div class="gold-line"></div>
+            </div>
+            <p class="section-desc">EAGI Oscar — это престижная награда, которая отмечает самых ярких, активных и талантливых студентов нашего института.</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="icon">🏆</div>
+                    <h3>Признание</h3>
+                    <p>Официальный статус лучшего в своей сфере.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">✨</div>
+                    <h3>Талант</h3>
+                    <p>Возможность заявить о своих способностях на весь институт.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">🔥</div>
+                    <h3>Активность</h3>
+                    <p>Награда за вклад в развитие студенческой жизни.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">👑</div>
+                    <h3>Лидерство</h3>
+                    <p>Выделение тех, кто ведет за собой и вдохновляет.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Номинации -->
+    <section id="nominations" class="nominations section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="title">Номинации</h2>
+                <div class="gold-line"></div>
+            </div>
+            <div class="nom-grid" id="nominations-list">
+                <!-- Карточки генерируются через JS или пишутся вручную -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Голосование -->
+    <section id="voting" class="voting section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="title">Голосование</h2>
+                <p>Выберите достойных кандидатов в каждой категории</p>
             </div>
 
-            <a href="#apply" class="cta-btn">Подать заявку</a>
-        </div>
-    </header>
-
-    <!-- Nominations -->
-    <section class="section">
-        <h2 class="section-title">Номинации</h2>
-        <div class="nom-grid">
-            <div class="nom-card">Открытие года</div>
-            <div class="nom-card">Лучший Активист</div>
-            <div class="nom-card">Научный прорыв</div>
-            <div class="nom-card">Лучший Вокал</div>
-            <div class="nom-card">Студ. объединение</div>
-            <div class="nom-card">Лучший Актер</div>
-            <div class="nom-card">Событие года</div>
-            <div class="nom-card">Лучший Волонтер</div>
-            <div class="nom-card">Контент Мейкер</div>
-        </div>
-    </section>
-
-    <!-- Registration Form -->
-    <section class="section" id="apply">
-        <h2 class="section-title">Анкета номинанта</h2>
-        <div class="form-container">
-            <form id="oscarForm">
-                <div class="input-group">
-                    <label>Полное ФИО</label>
-                    <input type="text" name="fio" placeholder="Введите ваше имя" required>
+            <form id="voteForm" class="vote-form">
+                <div id="voting-steps">
+                    <!-- Категории голосования появятся здесь -->
                 </div>
 
-                <div class="form-row">
+                <div class="user-info">
+                    <h3>Ваши данные</h3>
                     <div class="input-group">
-                        <label>Курс</label>
-                        <select name="course" required>
-                            <option>1 курс</option>
-                            <option>2 курс</option>
-                            <option>3 курс</option>
-                            <option>4 курс</option>
-                        </select>
+                        <input type="text" name="userName" placeholder="Ваше Имя и Фамилия" required>
                     </div>
                     <div class="input-group">
-                        <label>Группа</label>
-                        <input type="text" name="group" placeholder="ПП-22-01" required>
+                        <input type="text" name="userGroup" placeholder="Ваша Группа/Факультет" required>
                     </div>
+                    <button type="submit" class="btn btn-gold btn-block" id="submitBtn">Отправить голос</button>
                 </div>
-
-                <div class="form-row">
-                    <div class="input-group">
-                        <label>Телефон</label>
-                        <input type="tel" name="phone" placeholder="+7 700 000 00 00" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Instagram</label>
-                        <input type="text" name="social" placeholder="@username" required>
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <label>Выберите номинацию</label>
-                    <select name="nomination" required>
-                        <option value="">-- Выберите из списка --</option>
-                        <option>Открытие года</option>
-                        <option>Лучший Активист</option>
-                        <option>Лучший научный прорыв</option>
-                        <option>Лучший образ</option>
-                        <option>Лучший Вокал</option>
-                        <option>Студенческое объединение</option>
-                        <option>Лучший Актер</option>
-                        <option>Событие года</option>
-                        <option>Лучший Волонтер</option>
-                        <option>Лучший Контент Мейкер</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label>Почему именно вы достойны победы?</label>
-                    <textarea name="reason" rows="4" required></textarea>
-                </div>
-
-                <div class="input-group">
-                    <label>Ключевые достижения за год</label>
-                    <textarea name="achievements" rows="4" required></textarea>
-                </div>
-
-                <div class="input-group">
-                    <label>Ссылка на фото / портфолио</label>
-                    <input type="url" name="portfolio" placeholder="Google Drive / Cloud Link" required>
-                </div>
-
-                <button type="submit" class="cta-btn" id="subBtn" style="width:100%">Отправить заявку</button>
             </form>
-            <p id="successMsg" style="display:none; text-align:center; margin-top:20px; color:var(--gold); font-weight:700;">
-                ВАША ЗАЯВКА ПРИНЯТА. ДО ВСТРЕЧИ НА ЦЕРЕМОНИИ!
-            </p>
+
+            <div id="successMessage" class="success-message hidden">
+                <div class="success-content">
+                    <div class="check-icon">✓</div>
+                    <h3>Спасибо за ваш голос!</h3>
+                    <p>Ваш выбор принят. Результаты будут объявлены на церемонии награждения.</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Дата и Таймер -->
+    <section class="event-info section">
+        <div class="container">
+            <div class="event-card">
+                <h3>Церемония награждения</h3>
+                <div class="date-big">25 МАЯ 2024</div>
+                <p>Актовый зал EAGI | 18:00</p>
+                <div id="timer" class="timer">
+                    <div class="timer-item"><span id="days">00</span>дней</div>
+                    <div class="timer-item"><span id="hours">00</span>часов</div>
+                    <div class="timer-item"><span id="mins">00</span>минут</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        EAGI OSCAR 2026 | OFFICIAL STUDENT AWARDS
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">EAGI <span>OSCAR</span></div>
+                <p>При поддержке <strong>DOSTEAM</strong></p>
+                <div class="socials">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">Telegram</a>
+                </div>
+                <p class="copy">&copy; 2024 Все права защищены</p>
+            </div>
+        </div>
     </footer>
 
-    <script>
-        // --- ТАЙМЕР ---
-        const eventDate = new Date("May 13, 2026 18:00:00").getTime();
-        
-        function updateTimer() {
-            const now = new Date().getTime();
-            const diff = eventDate - now;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            
-            document.getElementById('d').innerText = days;
-            document.getElementById('h').innerText = hours;
-            document.getElementById('m').innerText = mins;
-        }
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // --- ФОРМА ---
-        const scriptURL = 'ВСТАВЬ_СВОЮ_ССЫЛКУ_ОТ_GOOGLE_ЗДЕСЬ';
-        const form = document.getElementById('oscarForm');
-        const btn = document.getElementById('subBtn');
-        const msg = document.getElementById('successMsg');
-
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            btn.disabled = true;
-            btn.innerText = 'ОТПРАВЛЯЕМ...';
-
-            const payload = {};
-            new FormData(form).forEach((v, k) => payload[k] = v);
-
-            fetch(scriptURL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify(payload)
-            })
-            .then(() => {
-                form.style.display = 'none';
-                msg.style.display = 'block';
-            })
-            .catch(() => {
-                alert('Ошибка отправки. Попробуйте еще раз.');
-                btn.disabled = false;
-                btn.innerText = 'Отправить заявку';
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
